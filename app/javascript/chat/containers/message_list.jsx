@@ -12,7 +12,7 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    this.refresher = setInterval(this.fetchMessages, 5000);
+    // this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
   componentDidUpdate() {
@@ -28,6 +28,7 @@ class MessageList extends Component {
   }
 
   render () {
+    console.log(this.props)
     return (
       <div className="channel-container">
         <div className="channel-title">
