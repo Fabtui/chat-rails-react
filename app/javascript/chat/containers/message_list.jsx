@@ -7,11 +7,11 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
-  componentWillMount() {
-    this.fetchMessages();
-  }
+  // componentWillMount() {
+  // }
 
   componentDidMount() {
+    this.fetchMessages();
     // this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
@@ -28,7 +28,6 @@ class MessageList extends Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <div className="channel-container">
         <div className="channel-title">
@@ -41,7 +40,7 @@ class MessageList extends Component {
             })
           }
         </div>
-        <MessageForm />
+        <MessageForm selectedChannel={this.props.selectedChannel} />
       </div>
     );
   }
@@ -50,7 +49,6 @@ class MessageList extends Component {
 function mapStateToProps(state) {
   return {
     messages: state.messages,
-    // selectedChannel: state.selectedChannel
   };
 }
 
